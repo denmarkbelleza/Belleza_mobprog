@@ -100,6 +100,19 @@ class NewsFeedCard extends StatelessWidget {
                       width: double.infinity,
                       height: ScreenUtil().setHeight(200),
                       fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          width: double.infinity,
+                          height: ScreenUtil().setHeight(200),
+                          color: Colors.grey[300],
+                          alignment: Alignment.center,
+                          child: CustomFont(
+                            text: 'Image not found: $postImagePath',
+                            fontSize: ScreenUtil().setSp(11),
+                            color: Colors.red,
+                          ),
+                        );
+                      },
                     )
                   : SizedBox(
                       width: double.infinity,
